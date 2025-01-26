@@ -1,0 +1,14 @@
+Requirement already satisfied: requests in c:\users\tamil mughilan\appdata\local\programs\python\python311\lib\site-packages (2.27.1)
+Collecting requests
+  Using cached requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+Requirement already satisfied: charset-normalizer<4,>=2 in c:\users\tamil mughilan\appdata\local\programs\python\python311\lib\site-packages (from requests) (2.0.12)
+Requirement already satisfied: idna<4,>=2.5 in c:\users\tamil mughilan\appdata\local\programs\python\python311\lib\site-packages (from requests) (3.3)
+Requirement already satisfied: urllib3<3,>=1.21.1 in c:\users\tamil mughilan\appdata\local\programs\python\python311\lib\site-packages (from requests) (1.26.9)
+Requirement already satisfied: certifi>=2017.4.17 in c:\users\tamil mughilan\appdata\local\programs\python\python311\lib\site-packages (from requests) (2022.5.18.1)
+Using cached requests-2.32.3-py3-none-any.whl (64 kB)
+Installing collected packages: requests
+  Attempting uninstall: requests
+    Found existing installation: requests 2.27.1
+    Uninstalling requests-2.27.1:
+      Successfully uninstalled requests-2.27.1
+Successfully installed requests-2.32.3
