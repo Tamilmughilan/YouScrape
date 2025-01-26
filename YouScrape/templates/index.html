@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Data Scraper</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube Data Scraper</h1>
+        <form method="POST">
+            <label for="url">Enter YouTube URL:</label>
+            <input type="text" id="url" name="url" required placeholder="Enter Video or Channel URL">
+            <button type="submit">Fetch Data</button>
+        </form>
+
+        {% if video_data %}
+            <div class="results">
+                <h2>Video Information:</h2>
+                {% if video_data.error %}
+                    <p class="error">{{ video_data.error }}</p>
+                {% else %}
+                    <table>
+                        <tr>
+                            <th>Video ID</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>View Count</th>
+                            <th>Like Count</th>
+                            <th>Comment Count</th>
+                        </tr>
+                        {% for video in video_data %}
+                        <tr>
+                            <td>{{ video['video_id'] }}</td>
+                            <td>{{ video['title'] }}</td>
+                            <td>{{ video['description'] }}</td>
+                            <td>{{ video['view_count'] }}</td>
+                            <td>{{ video['like_count'] }}</td>
+                            <td>{{ video['comment_count'] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

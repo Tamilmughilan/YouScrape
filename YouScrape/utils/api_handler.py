@@ -2,7 +2,7 @@ from googleapiclient.discovery import build
 
 class YouTubeAPIHandler:
     def __init__(self):
-        self.api_key = "API KEY HERE"
+        self.api_key = "API KEY"
         self.youtube = build("youtube", "v3", developerKey=self.api_key)
 
     def fetch_channel_data(self, url):
