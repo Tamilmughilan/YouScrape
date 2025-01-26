@@ -2,7 +2,7 @@ from googleapiclient.discovery import build
 
 class YouTubeAPIHandler:
     def __init__(self):
-        self.api_key = "API KEY"
+        self.api_key = "Your API key"
         self.youtube = build("youtube", "v3", developerKey=self.api_key)
 
     def fetch_channel_data(self, url):
@@ -31,6 +31,7 @@ class YouTubeAPIHandler:
 
         if video_response["items"]:
             video_item = video_response["items"][0]
+            channel_name = video_item["snippet"]["channelTitle"]
             video_data = {
                 "video_id": video_id,
                 "title": video_item["snippet"]["title"],
@@ -38,6 +39,7 @@ class YouTubeAPIHandler:
                 "view_count": video_item["statistics"].get("viewCount", "Not Available"),
                 "like_count": video_item["statistics"].get("likeCount", "Not Available"),
                 "comment_count": video_item["statistics"].get("commentCount", "Not Available"),
+                "channel_name": channel_name,
             }
         else:
             video_data = {
@@ -47,6 +49,7 @@ class YouTubeAPIHandler:
                 "view_count": "Not Available",
                 "like_count": "Not Available",
                 "comment_count": "Not Available",
+                "channel_name": "Not Available",
             }
 
         return video_data
